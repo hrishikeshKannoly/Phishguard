@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishguard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>PhishGuard - Phishing detection</h1>
+
+    <form action="/analyze" method="post">
+        <label for="">Paste the suspicious url below</label>
+        <input type="text" name="url"><br><br>
+
+        <label for="">Paste suspicious text below</label>
+        <textarea name="text" rows="6" cols="80"></textarea>
+
+        <button type="submit">Analyze</button>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Ananlysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Results</h2>
+
+    <p><strong>Verdict:</strong> {{result.verdict}}</p>
+    <p><strong>Score:</strong> {{result.risk_score}}</p>
+
+    <h3>URL Analysis</h3>
+    <pre>{{ url_result }}</pre>
+
+    <h3>Text Analysis</h3>
+    <pre>{{ text_result }}</pre>
+
+    <h3>Why this was flagged</h3>
+    <ul>
+        {% for explanation in result.explanations %}
+            <li>{{ explanation }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">analyze another</a>
+
+</body>
+</html>
